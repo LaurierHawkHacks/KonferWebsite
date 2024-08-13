@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,6 +14,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --black: #151515;
+  --black2: #373737;
+  --black3: #303030;
+  --background-gradient: linear-gradient(-45deg, var(--black), var(--black2), var(--black), var(--black), var(--black2), var(--black));
 }
 
 body {
@@ -20,11 +27,16 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+
+  background: var(--background-gradient);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
 }
 
 h1 {
   font-size: 5em;
   line-height: 1.1em;
+  margin: 0;
 }
 
 button {
@@ -68,32 +80,28 @@ a:hover {
   height: 100vh;
 }
 
-.container {
-    width: 100%;
-    height: 100;
-}
-
-.container h1 {
-    margin: 0;
-}
-
 .card {
-    max-width: 50%;
-    text-align: center;
+  max-width: 50%;
+  text-align: center;
 }
 
 .link-container {
-    display: flex;
-    gap: 1rem;
-    flex-direction: column;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
 }
 
 .link-container a {
-    padding: 0.5rem 1rem;
-    background: #8b5cf6;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
+  padding: 0.5rem 1rem;
+  background: #8b5cf6;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
